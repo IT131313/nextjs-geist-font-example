@@ -3,6 +3,11 @@ const cors = require('cors');
 require('dotenv').config();
 const db = require('./config/database');
 const authRoutes = require('./routes/auth');
+const servicesRoutes = require('./routes/services');
+const productsRoutes = require('./routes/products');
+const cartRoutes = require('./routes/cart');
+const ordersRoutes = require('./routes/orders');
+const consultationsRoutes = require('./routes/consultations');
 
 const app = express();
 
@@ -27,6 +32,11 @@ async function initializeDatabase() {
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/services', servicesRoutes);
+app.use('/api/products', productsRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', ordersRoutes);
+app.use('/api/consultations', consultationsRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
