@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "init-db": "mysql -u root < scripts/init-db.sql"
+    "init-db": "mysql -u root < scripts/init-db.sql",
+    "seed-services": "node scripts/seed-services.js",
+    "seed-consultations": "node scripts/seed-consultations.js",
+    "init-consultation-system": "node scripts/init-consultation-system.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
